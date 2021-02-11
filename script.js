@@ -25,13 +25,20 @@ if (drugParam != null) {
       openfda = drug.openfda
       for (var key in openfda) {
         $('#attributeList').append(
-          '<tr><td>' + key + '</td><td>' + openfda[key] + '</td></tr>'
+          '<tr><td class="property-title">' + key.replace(/_/g, ' ') + '</td><td>' + openfda[key] + '</td></tr>'
         );
       }
       for (var key in drug) {
-        $('#attributeList').append(
-          '<tr><td>' + key + '</td><td>' + drug[key] + '</td></tr>'
-        );
+        if (key == 'openfda') {
+          $('#attributeList').append(
+            '<tr></tr>'
+          );
+        } else {
+          $('#attributeList').append(
+            '<tr><td class="property-title">' + key.replace(/_/g, ' ') + '</td><td>' + drug[key] + '</td></tr>'
+          );
+        }
+
       }
     });
   })

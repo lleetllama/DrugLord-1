@@ -16,7 +16,13 @@ tr {
 p {
   font-style: italic;
 }
-
+.property-title{
+  text-transform:capitalize;
+}
+.card{
+  max-width:49%;
+  margin:5px;
+}
 .myheader{
   margin-top:10px;
   padding-top:14px;
